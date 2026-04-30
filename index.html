@@ -21,410 +21,287 @@
     import { createRoot } from '[https://esm.sh/react-dom@18/client](https://esm.sh/react-dom@18/client)';
     import { Search, LayoutDashboard, Calendar, ChevronRight, X, Briefcase, TrendingUp, AlertTriangle, Lightbulb, BarChart3, GripVertical } from '[https://esm.sh/lucide-react](https://esm.sh/lucide-react)';
 
-   
-    // 1. const initialTasks = [
-  // ---------------- COMPETITORS ----------------
-  {
-    id: 't1', colId: 'c1',
-    title: 'Aritzia (Premium Specialty)',
-    snippet: 'Dominating urban US markets. FY25 Rev: $2.74B CAD. Positioned above fast fashion, below luxury.',
-    details: 'Aritzia captures outsized market share with high four-wall productivity and elevated basics (e.g., The Effortless Pant). Blazers range from $150-$250. Their strategy focuses on exclusive in-house brands, a strong omnichannel presence, and aiming for $3.5B+ revenue by FY27. They maintain high full-price sell-through but are vulnerable to promotional pressures from lower-tier competitors.',
-    tags: ['Competitor', 'Premium'],
-    metrics: { 'Price Range': '$150 - $250', 'FY25 Revenue': '$2.74B CAD', 'Target': 'Urban Millennial/GenZ' }
-  },
-  {
-    id: 't2', colId: 'c1',
-    title: 'Zara & Fast Fashion',
-    snippet: 'Massive scale and speed-to-market. Oversized & cropped trend blazers at $70-$120.',
-    details: 'Zara pressures the market on price and speed, leveraging global scale to compress fashion cycles. They rapidly adopt runway trends like collarless blazers and modular sets within weeks. However, their weakness lies in verifiable sustainability and long-term garment quality, which increasingly alienates the eco-conscious 18-40 demographic.',
-    tags: ['Competitor', 'Mass Market'],
-    metrics: { 'Price Range': '$50 - $120', 'Advantage': 'Speed to Market', 'Weakness': 'Sustainability' }
-  },
-  {
-    id: 't3', colId: 'c1',
-    title: 'SuitShop & Quince (DTC)',
-    snippet: 'Disrupting with inclusive sizing and value-driven sustainable basics.',
-    details: 'SuitShop offers incredible fit consistency across sizes 00-24 (including short/regular/long lengths) for ~$225 full suits. Quince hits the $120 price point for matching sets using stretchy ponte and eco-fabrics. These DTC disruptors are major threats due to their high value-to-cost ratios and digitally native supply chains.',
-    tags: ['Competitor', 'DTC Disruptor'],
-    metrics: { 'Price Range': '$120 - $250', 'Advantage': 'Size Inclusivity & Value', 'Model': 'Direct-to-Consumer' }
-  },
+    const initialTasks = [
+      // ---------------- COMPETITORS ----------------
+      {
+        id: 't1', colId: 'c1',
+        title: 'Aritzia (Premium Specialty)',
+        snippet: 'Dominating urban US markets. FY25 Rev: $2.74B CAD. Positioned above fast fashion, below luxury.',
+        details: 'Aritzia captures outsized market share with high four-wall productivity and elevated basics (e.g., The Effortless Pant). Blazers range from $150-$250. Their strategy focuses on exclusive in-house brands, a strong omnichannel presence, and aiming for $3.5B+ revenue by FY27. They maintain high full-price sell-through but are vulnerable to promotional pressures from lower-tier competitors.',
+        tags: ['Competitor', 'Premium'],
+        metrics: { 'Price Range': '$150 - $250', 'FY25 Revenue': '$2.74B CAD', 'Target': 'Urban Millennial/GenZ' }
+      },
+      {
+        id: 't2', colId: 'c1',
+        title: 'Zara & Fast Fashion',
+        snippet: 'Massive scale and speed-to-market. Oversized & cropped trend blazers at $70-$120.',
+        details: 'Zara pressures the market on price and speed, leveraging global scale to compress fashion cycles. They rapidly adopt runway trends like collarless blazers and modular sets within weeks. However, their weakness lies in verifiable sustainability and long-term garment quality, which increasingly alienates the eco-conscious 18-40 demographic.',
+        tags: ['Competitor', 'Mass Market'],
+        metrics: { 'Price Range': '$50 - $120', 'Advantage': 'Speed to Market', 'Weakness': 'Sustainability' }
+      },
+      {
+        id: 't3', colId: 'c1',
+        title: 'SuitShop & Quince (DTC)',
+        snippet: 'Disrupting with inclusive sizing and value-driven sustainable basics.',
+        details: 'SuitShop offers incredible fit consistency across sizes 00-24 (including short/regular/long lengths) for ~$225 full suits. Quince hits the $120 price point for matching sets using stretchy ponte and eco-fabrics. These DTC disruptors are major threats due to their high value-to-cost ratios and digitally native supply chains.',
+        tags: ['Competitor', 'DTC Disruptor'],
+        metrics: { 'Price Range': '$120 - $250', 'Advantage': 'Size Inclusivity & Value', 'Model': 'Direct-to-Consumer' }
+      },
 
-  // ---------------- MARKETING & GAPS ----------------
-  {
-    id: 't4', colId: 'c2',
-    title: 'The Sizing & Fit Gap',
-    snippet: 'Traditional brands lack robust Petite, Tall, and Plus options in physical inventory.',
-    details: 'A massive gap in the 18-40 market is finding suits that actually fit without a $100+ tailor bill. Legacy brands often treat Petites/Talls/Plus as online-only afterthoughts. A new brand that champions universal fit algorithms and inclusive sizing (00-24) as a core pillar will capture immense loyalty and solve the highest friction point in women\'s suiting.',
-    tags: ['Market Gap', 'Opportunity'],
-    date: '2026-05-01', dateLabel: 'Immediate Priority'
-  },
-  {
-    id: 't5', colId: 'c2',
-    title: 'Social Media "Corporate Core"',
-    snippet: 'TikTok and IG are driving the "Quiet Luxury" and "Corporate Core" aesthetics.',
-    details: 'Younger millennials and Gen Z are wearing suits casually (workleisure). Marketing must pivot from "boardroom only" to "happy hour, weekend, and office." Influencer seeding with versatile, relaxed-fit blazers paired with denim or mini-skirts is highly effective for acquisition.',
-    tags: ['Marketing', 'Social Trends']
-  },
-  {
-    id: 't6', colId: 'c2',
-    title: 'Greenwashing Pushback',
-    snippet: 'Consumers are demanding verifiable sustainability, not just marketing buzzwords.',
-    details: 'The 18-40 demographic actively researches brands. Using virgin polyester is becoming a liability. Marketing must highlight GOTS certified cotton, recycled wool, and transparent supply chains (similar to Reformation and Everlane) to build trust and justify a premium price point.',
-    tags: ['Weakness', 'Consumer Shift']
-  },
+      // ---------------- MARKETING & GAPS ----------------
+      {
+        id: 't4', colId: 'c2',
+        title: 'The Sizing & Fit Gap',
+        snippet: 'Traditional brands lack robust Petite, Tall, and Plus options in physical inventory.',
+        details: 'A massive gap in the 18-40 market is finding suits that actually fit without a $100+ tailor bill. Legacy brands often treat Petites/Talls/Plus as online-only afterthoughts. A new brand that champions universal fit algorithms and inclusive sizing (00-24) as a core pillar will capture immense loyalty and solve the highest friction point in women\'s suiting.',
+        tags: ['Market Gap', 'Opportunity'],
+        date: '2026-05-01', dateLabel: 'Immediate Priority'
+      },
+      {
+        id: 't5', colId: 'c2',
+        title: 'Social Media "Corporate Core"',
+        snippet: 'TikTok and IG are driving the "Quiet Luxury" and "Corporate Core" aesthetics.',
+        details: 'Younger millennials and Gen Z are wearing suits casually (workleisure). Marketing must pivot from "boardroom only" to "happy hour, weekend, and office." Influencer seeding with versatile, relaxed-fit blazers paired with denim or mini-skirts is highly effective for acquisition.',
+        tags: ['Marketing', 'Social Trends']
+      },
+      {
+        id: 't6', colId: 'c2',
+        title: 'Greenwashing Pushback',
+        snippet: 'Consumers are demanding verifiable sustainability, not just marketing buzzwords.',
+        details: 'The 18-40 demographic actively researches brands. Using virgin polyester is becoming a liability. Marketing must highlight GOTS certified cotton, recycled wool, and transparent supply chains (similar to Reformation and Everlane) to build trust and justify a premium price point.',
+        tags: ['Weakness', 'Consumer Shift']
+      },
 
-  // ---------------- TRENDS ----------------
-  {
-    id: 't7', colId: 'c3',
-    title: 'The Relaxed Power Suit',
-    snippet: 'Broad shoulders, softer tailoring. Replacing the stiff, restrictive corporate suit.',
-    details: 'The backbone of 2026/2027 suiting. Jackets are slightly longer with broader shoulders, but the waist is shaped without being squeezed. Trousers are wide-leg or straight with a comfortable rise. This silhouette balances authority with all-day comfort, appealing to the hybrid worker.',
-    tags: ['Fashion Trend', 'Design'],
-    date: '2026-07-01', dateLabel: 'Q3 2026 Launch'
-  },
-  {
-    id: 't8', colId: 'c3',
-    title: 'Modular Coordinated Sets',
-    snippet: '3-to-4 piece sets (blazer, vest, trouser, midi skirt) for maximum versatility.',
-    details: 'Consumers want capsule wardrobes. Offering a blazer, waistcoat (vest), trousers, and bias-cut skirt in the exact same fabric allows the customer to buy 3-4 pieces and create a dozen outfits. This significantly increases Average Order Value (AOV) while providing perceived value.',
-    tags: ['Fashion Trend', 'Product Strategy'],
-    date: '2026-09-01', dateLabel: 'Q4 2026 Drop'
-  },
-  {
-    id: 't9', colId: 'c3',
-    title: 'Collarless & Funnel-Neck Blazers',
-    snippet: 'Moving away from traditional lapels for a modern, minimalist look.',
-    details: 'An ode to 50s Chanel and 90s minimalism. Collarless blazers offer a streamlined "quiet luxury" silhouette. Funnel-neck options act as architectural styling pieces for colder months. These silhouettes stand out in a sea of standard "boyfriend" blazers.',
-    tags: ['Fashion Trend', 'Design'],
-    date: '2027-01-01', dateLabel: 'Q1 2027 Concept'
-  },
-  {
-    id: 't10', colId: 'c3',
-    title: 'Colors: Coffee & Cobalt',
-    snippet: 'Saturated bold colors paired with warm earthy neutrals.',
-    details: 'While classic black and navy remain essential, 2026 is driven by warm coffee tones (latte, cream, chocolate) for everyday wear, and saturated bold colors (cobalt blue, emerald green) for statement "power" pieces that perform incredibly well on visual social media.',
-    tags: ['Fashion Trend', 'Color Palette']
-  },
+      // ---------------- TRENDS ----------------
+      {
+        id: 't7', colId: 'c3',
+        title: 'The Relaxed Power Suit',
+        snippet: 'Broad shoulders, softer tailoring. Replacing the stiff, restrictive corporate suit.',
+        details: 'The backbone of 2026/2027 suiting. Jackets are slightly longer with broader shoulders, but the waist is shaped without being squeezed. Trousers are wide-leg or straight with a comfortable rise. This silhouette balances authority with all-day comfort, appealing to the hybrid worker.',
+        tags: ['Fashion Trend', 'Design'],
+        date: '2026-07-01', dateLabel: 'Q3 2026 Launch'
+      },
+      {
+        id: 't8', colId: 'c3',
+        title: 'Modular Coordinated Sets',
+        snippet: '3-to-4 piece sets (blazer, vest, trouser, midi skirt) for maximum versatility.',
+        details: 'Consumers want capsule wardrobes. Offering a blazer, waistcoat (vest), trousers, and bias-cut skirt in the exact same fabric allows the customer to buy 3-4 pieces and create a dozen outfits. This significantly increases Average Order Value (AOV) while providing perceived value.',
+        tags: ['Fashion Trend', 'Product Strategy'],
+        date: '2026-09-01', dateLabel: 'Q4 2026 Drop'
+      },
+      {
+        id: 't9', colId: 'c3',
+        title: 'Collarless & Funnel-Neck Blazers',
+        snippet: 'Moving away from traditional lapels for a modern, minimalist look.',
+        details: 'An ode to 50s Chanel and 90s minimalism. Collarless blazers offer a streamlined "quiet luxury" silhouette. Funnel-neck options act as architectural styling pieces for colder months. These silhouettes stand out in a sea of standard "boyfriend" blazers.',
+        tags: ['Fashion Trend', 'Design'],
+        date: '2027-01-01', dateLabel: 'Q1 2027 Concept'
+      },
+      {
+        id: 't10', colId: 'c3',
+        title: 'Colors: Coffee & Cobalt',
+        snippet: 'Saturated bold colors paired with warm earthy neutrals.',
+        details: 'While classic black and navy remain essential, 2026 is driven by warm coffee tones (latte, cream, chocolate) for everyday wear, and saturated bold colors (cobalt blue, emerald green) for statement "power" pieces that perform incredibly well on visual social media.',
+        tags: ['Fashion Trend', 'Color Palette']
+      },
 
-  // ---------------- RISKS ----------------
-  {
-    id: 't11', colId: 'c4',
-    title: 'Economic Instability & Inflation',
-    snippet: 'Suits are a discretionary purchase prone to deferral during economic crunches.',
-    details: 'As living costs rise, the 18-40 demographic may choose to extend the life of their current wardrobe. Mitigation Strategy: Position products as high-ROI, versatile "investment" pieces rather than single-use formalwear. Highlight cost-per-wear in marketing.',
-    tags: ['Risk', 'Macro-Economic']
-  },
-  {
-    id: 't12', colId: 'c4',
-    title: 'Inventory & SKU Bloat',
-    snippet: 'Offering inclusive sizing dramatically increases SKU count and deadstock risk.',
-    details: 'A single blazer in 3 colors, 12 sizes, and 2 lengths equals 72 SKUs. Over-ordering can lead to margin-destroying markdowns. This requires highly precise demand forecasting, AI-driven inventory management, and potentially on-demand manufacturing for fringe sizes.',
-    tags: ['Risk', 'Operations']
-  },
-  {
-    id: 't13', colId: 'c4',
-    title: 'Supply Chain Volatility',
-    snippet: 'Sustainable fabrics (eco-linen, recycled polyester) face cost fluctuations.',
-    details: 'With global mandates shifting towards circular economy principles, demand for recycled textiles is spiking, leading to potential supply bottlenecks or price hikes for premium sustainable materials. Securing long-term mill contracts is essential.',
-    tags: ['Risk', 'Supply Chain']
-  },
+      // ---------------- RISKS ----------------
+      {
+        id: 't11', colId: 'c4',
+        title: 'Economic Instability & Inflation',
+        snippet: 'Suits are a discretionary purchase prone to deferral during economic crunches.',
+        details: 'As living costs rise, the 18-40 demographic may choose to extend the life of their current wardrobe. Mitigation Strategy: Position products as high-ROI, versatile "investment" pieces rather than single-use formalwear. Highlight cost-per-wear in marketing.',
+        tags: ['Risk', 'Macro-Economic']
+      },
+      {
+        id: 't12', colId: 'c4',
+        title: 'Inventory & SKU Bloat',
+        snippet: 'Offering inclusive sizing dramatically increases SKU count and deadstock risk.',
+        details: 'A single blazer in 3 colors, 12 sizes, and 2 lengths equals 72 SKUs. Over-ordering can lead to margin-destroying markdowns. This requires highly precise demand forecasting, AI-driven inventory management, and potentially on-demand manufacturing for fringe sizes.',
+        tags: ['Risk', 'Operations']
+      },
+      {
+        id: 't13', colId: 'c4',
+        title: 'Supply Chain Volatility',
+        snippet: 'Sustainable fabrics (eco-linen, recycled polyester) face cost fluctuations.',
+        details: 'With global mandates shifting towards circular economy principles, demand for recycled textiles is spiking, leading to potential supply bottlenecks or price hikes for premium sustainable materials. Securing long-term mill contracts is essential.',
+        tags: ['Risk', 'Supply Chain']
+      }
+    ];
 
-  // ---------------- INVESTMENT ----------------
-  {
-    id: 't14', colId: 'c5',
-    title: 'DTC Model + Tier 1 Pop-ups',
-    snippet: 'Launch Direct-to-Consumer to protect margins, use physical pop-ups for fit discovery.',
-    details: 'Wholesale eats into margins and dilutes brand control. Start entirely DTC online. To overcome the "fit barrier" inherent to tailored suits, host weekend pop-up showrooms in Tier 1 cities (NYC, LA, Chicago) where women can get professionally fitted and order via in-store tablets.',
-    tags: ['Strategy', 'Distribution'],
-    date: '2026-06-15', dateLabel: 'Q2 2026 Action'
-  },
-  {
-    id: 't15', colId: 'c5',
-    title: 'Invest in "Workleisure" Fabrics',
-    snippet: 'Source thermo-regulating, machine-washable, wrinkle-resistant materials.',
-    details: 'The hybrid work era demands comfort. Partner with mills producing 4-way stretch ponte and breathable recycled blends. If a suit feels like loungewear but looks like a boardroom power outfit, it satisfies the primary demand of the modern 18-40 professional.',
-    tags: ['Strategy', 'R&D'],
-    date: '2026-08-01', dateLabel: 'Q3 2026 Action'
-  },
-  {
-    id: 't16', colId: 'c5',
-    title: 'Agile Manufacturing & Drops',
-    snippet: 'Use small-batch production to test trends before heavy investment.',
-    details: 'Adopt a "read and react" inventory model. Launch limited capsule drops. If a specific modular set or color goes viral on TikTok, have agile supply chain agreements in place to rapidly replenish inventory within 4-6 weeks instead of traditional 6-month lead times.',
-    tags: ['Strategy', 'Operations'],
-    date: '2026-11-01', dateLabel: 'Late 2026 Action'
-  }
-];
-    // 2.const columns = [
-  { id: 'c1', title: 'Competitor Analysis', icon: <BarChart3 className="w-4 h-4" />, color: 'bg-blue-500', bg: 'bg-blue-50/50' },
-  { id: 'c2', title: 'Marketing & Gaps', icon: <Briefcase className="w-4 h-4" />, color: 'bg-purple-500', bg: 'bg-purple-50/50' },
-  { id: 'c3', title: 'Trends (2026+)', icon: <TrendingUp className="w-4 h-4" />, color: 'bg-pink-500', bg: 'bg-pink-50/50' },
-  { id: 'c4', title: 'Risk Factors', icon: <AlertTriangle className="w-4 h-4" />, color: 'bg-red-500', bg: 'bg-red-50/50' },
-  { id: 'c5', title: 'Investment Strategy', icon: <Lightbulb className="w-4 h-4" />, color: 'bg-emerald-500', bg: 'bg-emerald-50/50' },
-];
-    // 3. export default function App() {
-  const [tasks, setTasks] = useState(initialTasks);
-  const [view, setView] = useState('board');
-  const [activeTask, setActiveTask] = useState(null);
-  const [searchQuery, setSearchQuery] = useState('');
+    const columns = [
+      { id: 'c1', title: 'Competitor Analysis', icon: <BarChart3 className="w-4 h-4" />, color: 'bg-blue-500', bg: 'bg-blue-50/50' },
+      { id: 'c2', title: 'Marketing & Gaps', icon: <Briefcase className="w-4 h-4" />, color: 'bg-purple-500', bg: 'bg-purple-50/50' },
+      { id: 'c3', title: 'Trends (2026+)', icon: <TrendingUp className="w-4 h-4" />, color: 'bg-pink-500', bg: 'bg-pink-50/50' },
+      { id: 'c4', title: 'Risk Factors', icon: <AlertTriangle className="w-4 h-4" />, color: 'bg-red-500', bg: 'bg-red-50/50' },
+      { id: 'c5', title: 'Investment Strategy', icon: <Lightbulb className="w-4 h-4" />, color: 'bg-emerald-500', bg: 'bg-emerald-50/50' },
+    ];
 
-  // Drag and Drop Handlers
-  const handleDragStart = (e, taskId) => {
-    e.dataTransfer.setData('taskId', taskId);
-    setTimeout(() => { e.target.style.opacity = '0.4'; }, 0);
-  };
-  const handleDragEnd = (e) => {
-    e.target.style.opacity = '1';
-  };
-  const handleDragOver = (e) => {
-    e.preventDefault();
-  };
-  const handleDrop = (e, colId) => {
-    e.preventDefault();
-    const taskId = e.dataTransfer.getData('taskId');
-    if (taskId) {
-      setTasks(tasks.map(t => t.id === taskId ? { ...t, colId } : t));
-    }
-  };
+    function App() {
+      const [tasks, setTasks] = useState(initialTasks);
+      const [view, setView] = useState('board');
+      const [activeTask, setActiveTask] = useState(null);
+      const [searchQuery, setSearchQuery] = useState('');
 
-  // Filtering
-  const filteredTasks = tasks.filter(t => 
-    t.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
-    t.snippet.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    t.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()))
-  );
-
-  // Timeline Data
-  const timelineTasks = [...filteredTasks]
-    .filter(t => t.date)
-    .sort((a, b) => new Date(a.date) - new Date(b.date));
-
-  return (
-    <div className="flex flex-col h-screen bg-slate-100 font-sans text-slate-900 overflow-hidden">
+      const handleDragStart = (e, taskId) => {
+        e.dataTransfer.setData('taskId', taskId);
+        setTimeout(() => { e.target.style.opacity = '0.4'; }, 0);
+      };
       
-      {/* HEADER */}
-      <header className="bg-white border-b border-slate-200 px-6 py-4 flex flex-col md:flex-row md:items-center justify-between shrink-0 z-10 shadow-sm">
-        <div className="mb-4 md:mb-0">
-          <h1 className="text-2xl font-black text-slate-900 tracking-tight">
-            Aura Tailoring <span className="text-indigo-600">Strategy</span>
-          </h1>
-          <div className="flex flex-wrap gap-2 mt-2">
-            <span className="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">
-              Global Market: $73B (2025)
-            </span>
-            <span className="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-bold bg-blue-50 text-blue-700 border border-blue-200">
-              Target Demo: Women 18-40
-            </span>
-            <span className="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-bold bg-purple-50 text-purple-700 border border-purple-200">
-              Projected CAGR: 4.5%
-            </span>
-          </div>
-        </div>
-        
-        <div className="flex items-center space-x-4">
-          <div className="relative">
-            <Search className="w-4 h-4 absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400" />
-            <input 
-              type="text" 
-              placeholder="Search insights, trends..." 
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="pl-9 pr-4 py-2 bg-slate-50 border border-slate-200 focus:bg-white focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 rounded-lg text-sm w-full md:w-64 transition-all outline-none"
-            />
-          </div>
-          <div className="flex bg-slate-100 p-1 rounded-lg border border-slate-200">
-            <button 
-              onClick={() => setView('board')}
-              className={`px-3 py-1.5 rounded-md text-sm font-bold flex items-center transition-all ${view === 'board' ? 'bg-white text-indigo-700 shadow-sm' : 'text-slate-500 hover:text-slate-800'}`}
-            >
-              <LayoutDashboard className="w-4 h-4 mr-2" /> Board
-            </button>
-            <button 
-              onClick={() => setView('timeline')}
-              className={`px-3 py-1.5 rounded-md text-sm font-bold flex items-center transition-all ${view === 'timeline' ? 'bg-white text-indigo-700 shadow-sm' : 'text-slate-500 hover:text-slate-800'}`}
-            >
-              <Calendar className="w-4 h-4 mr-2" /> Timeline
-            </button>
-          </div>
-        </div>
-      </header>
+      const handleDragEnd = (e) => {
+        e.target.style.opacity = '1';
+      };
+      
+      const handleDragOver = (e) => {
+        e.preventDefault();
+      };
+      
+      const handleDrop = (e, colId) => {
+        e.preventDefault();
+        const taskId = e.dataTransfer.getData('taskId');
+        if (taskId) {
+          setTasks(tasks.map(t => t.id === taskId ? { ...t, colId } : t));
+        }
+      };
 
-      {/* MAIN CONTENT AREA */}
-      <main className="flex-1 overflow-hidden relative">
-        {view === 'board' ? (
-          /* BOARD VIEW */
-          <div className="h-full w-full overflow-x-auto overflow-y-hidden p-6">
-            <div className="flex gap-6 h-full items-start min-w-max pb-4">
-              {columns.map(col => {
-                const columnTasks = filteredTasks.filter(t => t.colId === col.id);
-                return (
-                  <div 
-                    key={col.id}
-                    className={`flex-shrink-0 w-80 bg-white rounded-xl flex flex-col max-h-full border border-slate-200 shadow-sm ${col.bg}`}
-                    onDragOver={handleDragOver}
-                    onDrop={(e) => handleDrop(e, col.id)}
-                  >
-                    <div className={`h-1.5 w-full rounded-t-xl ${col.color}`}></div>
-                    <div className="p-4 border-b border-slate-100 flex justify-between items-center bg-white rounded-t-xl">
-                      <h3 className="font-bold text-slate-800 flex items-center gap-2">
-                        <span className={`p-1.5 rounded-md text-white ${col.color}`}>
-                          {col.icon}
-                        </span>
-                        {col.title}
-                      </h3>
-                      <span className="bg-slate-100 text-slate-600 text-xs font-black px-2.5 py-1 rounded-full">
-                        {columnTasks.length}
-                      </span>
-                    </div>
-                    
-                    <div className="flex-1 overflow-y-auto p-3 space-y-3 scrollbar-thin">
-                      {columnTasks.map(task => (
-                        <div
-                          key={task.id}
-                          draggable
-                          onDragStart={(e) => handleDragStart(e, task.id)}
-                          onDragEnd={handleDragEnd}
-                          onClick={() => setActiveTask(task)}
-                          className="bg-white p-4 rounded-xl shadow-sm border border-slate-200 cursor-grab active:cursor-grabbing hover:border-indigo-400 hover:shadow-md transition-all group relative"
-                        >
-                          <div className="absolute top-4 right-3 text-slate-300 opacity-0 group-hover:opacity-100 transition-opacity">
-                            <GripVertical className="w-4 h-4" />
-                          </div>
-                          <div className="flex flex-wrap gap-1.5 mb-3 pr-6">
-                            {task.tags.map(tag => (
-                              <span key={tag} className="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded text-indigo-800 bg-indigo-50 border border-indigo-100">
-                                {tag}
-                              </span>
-                            ))}
-                          </div>
-                          <h4 className="font-bold text-slate-900 text-sm mb-1.5 leading-snug group-hover:text-indigo-600 transition-colors">
-                            {task.title}
-                          </h4>
-                          <p className="text-xs text-slate-500 line-clamp-3 leading-relaxed">
-                            {task.snippet}
-                          </p>
-                          {task.dateLabel && (
-                            <div className="mt-4 pt-3 border-t border-slate-50 flex items-center text-[11px] font-bold text-slate-400 group-hover:text-indigo-500 transition-colors">
-                              <Calendar className="w-3.5 h-3.5 mr-1.5" />
-                              {task.dateLabel}
-                            </div>
-                          )}
-                        </div>
-                      ))}
-                      {columnTasks.length === 0 && (
-                        <div className="h-24 border-2 border-dashed border-slate-200 rounded-xl flex items-center justify-center text-slate-400 text-sm font-medium">
-                          Drop insights here
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                );
-              })}
+      const filteredTasks = tasks.filter(t => 
+        t.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+        t.snippet.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        t.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()))
+      );
+
+      const timelineTasks = [...filteredTasks]
+        .filter(t => t.date)
+        .sort((a, b) => new Date(a.date) - new Date(b.date));
+
+      return (
+        <div className="flex flex-col h-screen bg-slate-100 font-sans text-slate-900 overflow-hidden">
+          {/* HEADER */}
+          <header className="bg-white border-b border-slate-200 px-6 py-4 flex flex-col md:flex-row md:items-center justify-between shrink-0 z-10 shadow-sm">
+            <div className="mb-4 md:mb-0">
+              <h1 className="text-2xl font-black text-slate-900 tracking-tight">
+                Aura Tailoring <span className="text-indigo-600">Strategy</span>
+              </h1>
             </div>
-          </div>
-        ) : (
-          /* TIMELINE VIEW */
-          <div className="h-full w-full overflow-y-auto p-8 bg-slate-50">
-            <div className="max-w-3xl mx-auto">
-              <h2 className="text-2xl font-black text-slate-900 mb-8 flex items-center">
-                <Calendar className="w-6 h-6 mr-3 text-indigo-600" /> Action & Trend Timeline
-              </h2>
-              
-              <div className="relative border-l-2 border-indigo-200 pl-8 ml-4 space-y-12 pb-16">
-                {timelineTasks.length === 0 ? (
-                  <p className="text-slate-500">No timeline items match your search.</p>
-                ) : (
-                  timelineTasks.map((task) => (
-                    <div key={task.id} className="relative group">
-                      <div className="absolute -left-[41px] top-1 w-5 h-5 bg-white border-4 border-indigo-500 rounded-full shadow-sm group-hover:scale-125 transition-transform" />
-                      <div 
-                         className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm cursor-pointer hover:border-indigo-400 hover:shadow-lg transition-all"
-                         onClick={() => setActiveTask(task)}
-                      >
-                         <span className="inline-block px-3 py-1 bg-indigo-50 text-indigo-800 text-[10px] font-black uppercase tracking-wider rounded-full mb-3 border border-indigo-100">
-                           {task.dateLabel}
-                         </span>
-                         <h3 className="text-xl font-bold text-slate-900 mb-2">{task.title}</h3>
-                         <p className="text-slate-600 text-sm mb-5 leading-relaxed">{task.details}</p>
-                         
-                         <div className="flex items-center text-sm font-bold text-indigo-600 group-hover:translate-x-1 transition-transform inline-flex">
-                            View Strategy Details <ChevronRight className="w-4 h-4 ml-1" />
-                         </div>
-                      </div>
-                    </div>
-                  ))
-                )}
+            
+            <div className="flex items-center space-x-4">
+              <div className="relative">
+                <Search className="w-4 h-4 absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400" />
+                <input 
+                  type="text" 
+                  placeholder="Search insights..." 
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="pl-9 pr-4 py-2 bg-slate-50 border border-slate-200 focus:bg-white focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 rounded-lg text-sm w-full md:w-64 transition-all outline-none"
+                />
+              </div>
+              <div className="flex bg-slate-100 p-1 rounded-lg border border-slate-200">
+                <button 
+                  onClick={() => setView('board')}
+                  className={`px-3 py-1.5 rounded-md text-sm font-bold flex items-center transition-all ${view === 'board' ? 'bg-white text-indigo-700 shadow-sm' : 'text-slate-500 hover:text-slate-800'}`}
+                >
+                  <LayoutDashboard className="w-4 h-4 mr-2" /> Board
+                </button>
+                <button 
+                  onClick={() => setView('timeline')}
+                  className={`px-3 py-1.5 rounded-md text-sm font-bold flex items-center transition-all ${view === 'timeline' ? 'bg-white text-indigo-700 shadow-sm' : 'text-slate-500 hover:text-slate-800'}`}
+                >
+                  <Calendar className="w-4 h-4 mr-2" /> Timeline
+                </button>
               </div>
             </div>
-          </div>
-        )}
-      </main>
+          </header>
 
-      {/* MODAL / DEEP DIVE */}
-      {activeTask && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm" onClick={() => setActiveTask(null)}>
-          <div 
-            className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full flex flex-col max-h-[90vh] transform transition-all"
-            onClick={e => e.stopPropagation()}
-          >
-             <div className="px-8 py-6 border-b border-slate-100 flex justify-between items-start bg-slate-50 rounded-t-2xl">
-                <div>
-                  <div className="flex flex-wrap gap-2 mb-3">
-                    {activeTask.tags.map(tag => (
-                      <span key={tag} className="text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded text-indigo-800 bg-indigo-100 border border-indigo-200">
-                        {tag}
-                      </span>
+          {/* MAIN CONTENT */}
+          <main className="flex-1 overflow-hidden relative">
+            {view === 'board' ? (
+              <div className="h-full w-full overflow-x-auto overflow-y-hidden p-6">
+                <div className="flex gap-6 h-full items-start min-w-max pb-4">
+                  {columns.map(col => {
+                    const columnTasks = filteredTasks.filter(t => t.colId === col.id);
+                    return (
+                      <div 
+                        key={col.id}
+                        className={`flex-shrink-0 w-80 bg-white rounded-xl flex flex-col max-h-full border border-slate-200 shadow-sm ${col.bg}`}
+                        onDragOver={handleDragOver}
+                        onDrop={(e) => handleDrop(e, col.id)}
+                      >
+                        <div className={`h-1.5 w-full rounded-t-xl ${col.color}`}></div>
+                        <div className="p-4 border-b border-slate-100 flex justify-between items-center bg-white rounded-t-xl">
+                          <h3 className="font-bold text-slate-800 flex items-center gap-2">
+                            <span className={`p-1.5 rounded-md text-white ${col.color}`}>{col.icon}</span>
+                            {col.title}
+                          </h3>
+                          <span className="bg-slate-100 text-slate-600 text-xs font-black px-2.5 py-1 rounded-full">{columnTasks.length}</span>
+                        </div>
+                        
+                        <div className="flex-1 overflow-y-auto p-3 space-y-3">
+                          {columnTasks.map(task => (
+                            <div
+                              key={task.id}
+                              draggable
+                              onDragStart={(e) => handleDragStart(e, task.id)}
+                              onDragEnd={handleDragEnd}
+                              onClick={() => setActiveTask(task)}
+                              className="bg-white p-4 rounded-xl shadow-sm border border-slate-200 cursor-grab active:cursor-grabbing hover:border-indigo-400 hover:shadow-md transition-all group relative"
+                            >
+                              <div className="absolute top-4 right-3 text-slate-300 opacity-0 group-hover:opacity-100 transition-opacity">
+                                <GripVertical className="w-4 h-4" />
+                              </div>
+                              <h4 className="font-bold text-slate-900 text-sm mb-1.5 leading-snug group-hover:text-indigo-600 transition-colors">{task.title}</h4>
+                              <p className="text-xs text-slate-500 line-clamp-3 leading-relaxed">{task.snippet}</p>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            ) : (
+              <div className="h-full w-full overflow-y-auto p-8 bg-slate-50">
+                <div className="max-w-3xl mx-auto">
+                  <h2 className="text-2xl font-black text-slate-900 mb-8 flex items-center">
+                    <Calendar className="w-6 h-6 mr-3 text-indigo-600" /> Action & Trend Timeline
+                  </h2>
+                  <div className="relative border-l-2 border-indigo-200 pl-8 ml-4 space-y-12 pb-16">
+                    {timelineTasks.map((task) => (
+                      <div key={task.id} className="relative group cursor-pointer" onClick={() => setActiveTask(task)}>
+                        <div className="absolute -left-[41px] top-1 w-5 h-5 bg-white border-4 border-indigo-500 rounded-full group-hover:scale-125 transition-transform" />
+                        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-indigo-400 hover:shadow-lg transition-all">
+                           <span className="inline-block px-3 py-1 bg-indigo-50 text-indigo-800 text-[10px] font-black uppercase tracking-wider rounded-full mb-3">{task.dateLabel}</span>
+                           <h3 className="text-xl font-bold text-slate-900 mb-2">{task.title}</h3>
+                           <p className="text-slate-600 text-sm">{task.snippet}</p>
+                        </div>
+                      </div>
                     ))}
                   </div>
-                  <h2 className="text-3xl font-black text-slate-900 leading-tight">{activeTask.title}</h2>
                 </div>
-                <button onClick={() => setActiveTask(null)} className="p-2 text-slate-400 hover:text-slate-800 hover:bg-slate-200 rounded-full transition-colors">
-                  <X className="w-6 h-6" />
-                </button>
-             </div>
-             
-             <div className="p-8 overflow-y-auto">
-                <h3 className="text-xs font-black text-slate-400 uppercase tracking-widest mb-3">Strategic Insight</h3>
-                <p className="text-slate-700 text-lg leading-relaxed mb-8">
-                  {activeTask.details}
-                </p>
+              </div>
+            )}
+          </main>
 
-                {activeTask.metrics && (
-                  <>
-                    <h3 className="text-xs font-black text-slate-400 uppercase tracking-widest mb-4">Key Data Points</h3>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-8">
-                       {Object.entries(activeTask.metrics).map(([key, val]) => (
-                          <div key={key} className="bg-slate-50 p-4 rounded-xl border border-slate-200">
-                             <div className="text-[11px] text-slate-500 font-bold uppercase tracking-wider mb-1">{key}</div>
-                             <div className="font-black text-slate-900 text-lg">{val}</div>
-                          </div>
-                       ))}
-                    </div>
-                  </>
-                )}
-
-                {activeTask.dateLabel && (
-                  <div className="flex items-center p-5 bg-indigo-50 border border-indigo-100 rounded-xl text-indigo-900 mt-2">
-                     <Calendar className="w-6 h-6 mr-4 text-indigo-600" />
-                     <div>
-                       <div className="text-[10px] font-black uppercase tracking-widest text-indigo-500 mb-1">Target Timeline</div>
-                       <div className="font-black text-lg">{activeTask.dateLabel}</div>
-                     </div>
-                  </div>
-                )}
-             </div>
-             
-             <div className="px-8 py-5 border-t border-slate-100 bg-slate-50 flex justify-end rounded-b-2xl">
-                <button onClick={() => setActiveTask(null)} className="px-6 py-2.5 bg-slate-900 text-white text-sm font-bold rounded-xl hover:bg-indigo-600 transition-colors shadow-md">
-                   Close Insight
-                </button>
-             </div>
-          </div>
+          {/* MODAL / DEEP DIVE */}
+          {activeTask && (
+            <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm" onClick={() => setActiveTask(null)}>
+              <div className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full flex flex-col max-h-[90vh]" onClick={e => e.stopPropagation()}>
+                 <div className="px-8 py-6 border-b border-slate-100 flex justify-between items-start bg-slate-50 rounded-t-2xl">
+                    <h2 className="text-3xl font-black text-slate-900 leading-tight">{activeTask.title}</h2>
+                    <button onClick={() => setActiveTask(null)} className="p-2 text-slate-400 hover:text-slate-800 rounded-full transition-colors"><X className="w-6 h-6" /></button>
+                 </div>
+                 <div className="p-8 overflow-y-auto">
+                    <h3 className="text-xs font-black text-slate-400 uppercase tracking-widest mb-3">Strategic Insight</h3>
+                    <p className="text-slate-700 text-lg leading-relaxed mb-8">{activeTask.details}</p>
+                 </div>
+                 <div className="px-8 py-5 border-t border-slate-100 bg-slate-50 flex justify-end rounded-b-2xl">
+                    <button onClick={() => setActiveTask(null)} className="px-6 py-2.5 bg-slate-900 text-white text-sm font-bold rounded-xl hover:bg-indigo-600 transition-colors">Close Insight</button>
+                 </div>
+              </div>
+            </div>
+          )}
         </div>
-      )}
-    </div>
-  );
-}
+      );
+    }
 
     // Render the App
     const root = createRoot(document.getElementById('root'));
